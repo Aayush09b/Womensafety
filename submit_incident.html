@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Serif+Display&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="submit_incident.css">
+    <script>
+        function showAlert() {
+            alert("Form submitted successfully!");
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Submit Incident</h1>
+    <div class="forrm">
+        <form class="form" action="/submit_incident" method="POST" onsubmit="showAlert()">
+            <label>
+                <input required="" placeholder="" type="text" class="input" name="first_name">
+                <span>First Name</span>
+            </label>
+
+            <label>
+                <input required="" placeholder="" type="text" class="input" name="last_name">
+                <span>Last Name</span>
+            </label>
+
+            <label>
+                <input required="" placeholder="" type="email" class="input" name="email">
+                <span>Email</span>
+            </label>
+
+            <label>
+                <input required="" type="tel" placeholder="" class="input" name="contact_number">
+                <span>Contact Number</span>
+            </label>
+
+           
+            <!-- New Fields for time and location -->
+            <label>
+                <input required="" type="date" class="input" name="date">
+                <span>Date</span>
+            </label>
+            <label>
+                <input required="" type="text" class="input" name="time">
+                <span>Time</span>
+            </label>
+
+
+            <label>
+                <input required="" type="text" class="input" name="location">
+                <span>Location</span>
+            </label>
+            <label>
+                <textarea required="" rows="3" placeholder="" class="input01" name="feedback_message"></textarea>
+                <span>Incident</span>
+            </label>
+
+            <button class="fancy" href="#">
+                <span class="top-key"></span>
+                <span class="text">submit</span>
+                <span class="bottom-key-1"></span>
+                <span class="bottom-key-2"></span>
+            </button>
+        </form>
+    </div>
+
+</body>
+
+</html>

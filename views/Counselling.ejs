@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counselling Service</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="campus_dashboard.css">
+
+</head>
+
+<body>
+
+    <div class="row">
+        <div class="col">
+
+            <main class="table">
+                <section class="table__header">
+                    <h1>Counselling Requests</h1>
+                    <div class="input-group">
+                        <input type="search" placeholder="Filter Data...">
+                    </div>
+
+                </section>
+                <section class="table__body">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>first Name <span class="icon-arrow">&UpArrow;</span></th>
+                                <th>last Name <span class="icon-arrow">&UpArrow;</span></th>
+                                <th>Phone Number <span class="icon-arrow">&UpArrow;</span></th>
+                                <th>Mail<span class="icon-arrow">&UpArrow;</span></th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% data.forEach(item=> { %>
+                                <tr>
+
+                                    <td>
+                                        <%= item.first_name %>
+                                    </td>
+                                    <td>
+                                        <%= item.last_name %>
+                                    </td>
+                                    <td>
+                                        <%= item.contact_number %>
+                                    </td>
+                                    <td>
+                                        <%= item.email %>
+                                    </td>
+                                </tr>
+                                <% }); %>
+                        </tbody>
+                    </table>
+                </section>
+            </main>
+
+        </div>
+
+    </div>
+
+
+
+    <script>
+        const eventSource = new EventSource('/sse');
+
+        eventSource.onmessage = (event) => {
+            const data = JSON.parse(event.data);
+
+            // Create a div element for the overlay
+            const overlay = document.createElement('div');
+            overlay.style.position = 'fixed';
+            overlay.style.top = '0';
+            overlay.style.left = '0';
+            overlay.style.width = '100%';
+            overlay.style.height = '100%';
+            overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+            overlay.style.display = 'flex';
+            overlay.style.justifyContent = 'center';
+            overlay.style.alignItems = 'center';
+
+            // Create a div element for the message box
+            const messageBox = document.createElement('div');
+            messageBox.style.background = 'white';
+            messageBox.style.padding = '20px';
+            messageBox.style.borderRadius = '8px';
+            messageBox.style.textAlign = 'center'; // Center the text
+
+            // Create a p element for the message
+            const message = document.createElement('p');
+            message.textContent = data;
+
+            // Create a button for user interaction
+            const closeButton = document.createElement('button');
+            closeButton.textContent = 'OK';
+            closeButton.style.marginTop = '10px'; // Add some space above the button
+            closeButton.addEventListener('click', () => {
+
+                location.href = location.href; // Close the overlay
+            });
+
+            // Append elements to the DOM
+            messageBox.appendChild(message);
+            messageBox.appendChild(closeButton);
+            overlay.appendChild(messageBox);
+            document.body.appendChild(overlay);
+        };
+
+    </script>
+    <script src="campus_dashboard.js"></script>
+
+</body>
+
+<footer>
+
+</footer>
+
+</html>

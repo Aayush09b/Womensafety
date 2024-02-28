@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,400;0,700;0,800;1,400;1,600&display=swap');
+body{
+    font-family: 'Plus Jakarta Sans', sans-serif;
+   
+}
+.section{
+    margin-top: 5%;
+}
+.btn{
+    border-radius:8px;
+}
+.welcome{
+    font-weight: 700;
+    margin-top: 5%;
+}
+.welcome-main{
+    font-weight: 800;
+    margin-top: 5%;
+}
+.text{
+
+    margin-top: 5%;
+}
+p{
+    font-weight: 400;
+    font-size: larger;
+    color: rgb(120, 120, 120);
+}
+.img{
+    width: 50%;
+   
+}
+.container-div{
+    text-align: center;
+}
+.features-div{
+    text-align: center;
+    margin-top: 4%;
+}
+.img-div{
+    text-align: center;
+}
+h4{
+    font-weight:bolder;
+}
+@media only screen and (max-width: 767px) {
+    /* Your CSS rules for mobile screens go here */
+
+    .container {
+       text-align: center; /* Example: Adjusting padding for header */
+    }
+
+    /* Add more rules as needed */
+}
+.nav-link{
+    margin-right: 50px;
+    font-weight: 500;
+    font-size: large;
+}
+.nav-cont{
+    background-image: linear-gradient(-45deg, #4481eb 0%, #04befe 100%);
+   
+}
+.features-div {
+    /* Set initial position for animation */
+    transform: translateX(0);
+    transition: transform 0.9s;
+}
+
+.aos-animate.features-div[data-aos='slide-right'] {
+    /* Define the final position for the animation */
+    transform: translateX(100%);
+}
+
+.slideInRight {
+    animation-name: slideInRight;
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}

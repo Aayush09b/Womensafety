@@ -1,0 +1,51 @@
+/* CSS to center the cards both horizontally and vertically */
+.center-cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+.column{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    
+}
+.card-img-top{
+    width:50%;
+    margin-left: 25%;
+}
+.card{
+    text-align: center;
+    position: relative;
+    background: rgba(34, 34, 34, 0.2); /* Translucent white background */
+    backdrop-filter: blur(10px); /* Apply a blur effect to the background */
+    border-radius: 10px;
+    
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Optional shadow for better contrast */
+    color: rgb(12, 12, 12); /* Text color for dark theme */
+    transition: transform 0.6s;
+}
+
+body{
+    background: url('https://img.freepik.com/free-vector/blue-curve-background_53876-113112.jpg?size=626&ext=jpg')no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+
+/* Zoom effect on hover */
+.card:hover {
+    transform: scale(1.1); /* Increase the scale to zoom in on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Optional shadow effect */
+}
+
+/* media querry for pc */
+@media (min-width: 992px) {
+    /* Your CSS rules for laptop screens go here */
+   .column{
+    padding: 35px;
+   }
+    /* Add any other CSS rules specific to laptop screens */
+}

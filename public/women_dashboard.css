@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Plus+Jakarta+Sans:ital,wght@0,200;0,400;0,700;0,800;1,400;1,600&family=Tinos:wght@700&display=swap');
+
+
+body {
+    background-image: url('images/wallpaperflare.com_wallpaper (2).jpg');
+    background-size: cover; /* This will make sure the image covers the whole screen */
+    background-attachment: fixed; /* This is what makes the background fixed */
+}
+body::before {
+    content: "";
+    background: inherit; /* Inherit the background from the body */
+    filter: blur(7px); /* Adjust the blur radius as needed */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.container{
+   margin-top: 4%;
+}
+.cont{
+    margin-bottom: 3%;
+}
+.welcome{
+    width: 100%;
+    height: 4%;
+    margin-top: 2%;
+    text-align: center;
+    padding: 1%;
+    color: #fff;
+}
+h1{
+    font-family: 'Plus Jakarta Sans';
+   font-weight: 900;
+}
+h4{
+    color: #fff;
+}
+.tab-head{
+    color: #fff;
+}
+.options {
+    border: 2px solid #ccc; /* Add a border for visual separation (optional) */
+    border-radius: 0.625rem; /* Adjust the radius to your liking */
+    padding: 0.435rem;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    transition: transform 0.6s;
+   
+}
+.options:hover{
+    transform: scale(1.1); /* Increase the scale to zoom in on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Optional shadow effect */
+}
+.options_image {
+    width: 6.25rem;
+    height: 6.25rem;
+    object-fit: cover;
+    border-radius: 50%; /* Create a circular image */
+   
+}
+.options:hover .options_image {
+    filter: brightness(80%); /* Adjust the brightness to your preference */
+}
+
+a{
+    text-decoration: none;
+}
+
+/* for mobile*/
+@media only screen and (max-width: 767px) {
+    /* Your CSS rules for mobile screens go here */
+
+    .column {
+       margin-top: 5%;
+       text-align: center;
+ /* Example: Adjusting padding for header */
+    }
+    .options{
+    padding: 1px;
+    margin: 0 auto;
+    }
+    .tab{
+        margin: 0 auto;
+    }
+    /* Add more rules as needed */
+}
+/* for PC*/
+@media screen and (min-width: 992px) {
+   
+}
+
+
+
+.tab{
+    margin:5%;
+    margin-top: 9%;
+   
+    text-align: center;
+}
+.tab2{
+    margin: 5%;
+    margin-top: 9%;
+    text-align: center;
+
+}
+.tab-head{
+    margin: 8%;
+    font-family: 'Tinos', serif;
+}
+
+

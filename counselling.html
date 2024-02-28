@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Serif+Display&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="submit_incident.css">
+    <script>
+        function showAlert() {
+            alert("Form submitted successfully!");
+        }
+    </script>
+</head>
+<body>
+    <h1>Counselling</h1>
+    <div class="forrm">
+        <form class="form" action="/counselling" method="POST" onsubmit="showAlert()">
+            <label>
+                <input required="" placeholder="" type="text" class="input" name="first_name">
+                <span>First Name</span>
+            </label>
+
+            <label>
+                <input required="" placeholder="" type="text" class="input" name="last_name">
+                <span>Last Name</span>
+            </label>
+
+            <label>
+                <input required="" placeholder="" type="email" class="input" name="email">
+                <span>Email</span>
+            </label>
+
+            <label>
+                <input required="" type="tel" placeholder="" class="input" name="contact_number">
+                <span>Contact Number</span>
+            </label>
+
+            <button class="fancy" href="#">
+                <span class="top-key"></span>
+                <span class="text">Request Counselling</span>
+                <span class="bottom-key-1"></span>
+                <span class="bottom-key-2"></span>
+              </button>
+        </form>
+    </div>
+</body>
+</html>

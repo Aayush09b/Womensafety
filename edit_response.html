@@ -1,0 +1,59 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Serif+Display&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="submit_incident.css">
+    <script>
+        function showAlert() {
+            alert("Form submitted successfully!");
+        }
+    </script>
+
+</head>
+
+<body>
+    <h1>Edit Response</h1>
+    
+    <div class="forrm">
+        <form class="form" action="/investigation" method="POST" onsubmit="showAlert()">
+            <label>
+                <input type="text" class="input" id="case_no" name="case_no">
+                <span>Case No</span>
+            </label>
+    
+            <label>
+                <input type="text" class="input" id="inspecter_name" name="inspecter_name" >
+                <span>Inspector Name</span>
+            </label>
+    
+            <label>
+                <input type="text" class="input" id="University_name" name="University_name">
+                <span>University Name</span>
+            </label>
+    
+            <label>
+                <input type="text" class="input" id="status" name="status" >
+                <span>Status</span>
+            </label>
+    
+            <button class="fancy" href="#">
+                <span class="top-key"></span>
+                <span class="text">submit</span>
+                <span class="bottom-key-1"></span>
+                <span class="bottom-key-2"></span>
+            </button>
+        </form>
+    </div>
+    
+   
+</body>
+
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>police_dashboard</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="police_dashboard.css">
+
+</head>
+
+<body>
+
+    <div class="welcome">
+        <h1 id="welcome-text">Police Dashboard</h1>
+    </div>
+
+    <div class="container ">
+        <div class="row animate__animated animate__fadeIn animate__delay-0.5s">
+            <div class="col-lg-6 col-md-6 col-sm-12 column">
+                <a href="/Investigation_Support">
+                    <div class="options ">
+                        <img class="options_image" src="images\Counselling Services.png">
+                        <h4>Investigation Support</h4>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-lg-6 col-md6 col-sm-12 column">
+                <a href="/victim_info">
+                    <div class="options">
+                        <img class="options_image" src="images\resources.png">
+                        <h4>Victims info</h4>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-6 col-md6 col-sm-12 column">
+                <a href="/multiple_aggency">
+                    <div class="options">
+                        <img class="options_image" src="images\Legal Aid.png">
+                        <h4>Multi-Agency Coordination</h4>
+                    </div>
+                </a>
+
+            </div>
+
+            <div class="col-lg-6 col-md6 col-sm-12 column">
+                <a href="/case_tracking">
+                    <div class="options">
+                        <img class="options_image" src="images\Safety Guides.png">
+                        <h4>Case Tracking</h4>
+                    </div>
+                </a>
+            </div>
+
+
+            <!-- <main class="table">
+                <section class="table__header">
+                    <h1>Incidents</h1>
+                    <div class="input-group">
+                        <input type="search" placeholder="Filter Data...">
+                    </div>
+
+                </section>
+                <section class="table__body">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>first Name <span class="icon-arrow">&UpArrow;</span></th>
+                                <th>last Name <span class="icon-arrow">&UpArrow;</span></th>
+                                <th>Phone Number <span class="icon-arrow">&UpArrow;</span></th>
+                                <th>Incident<span class="icon-arrow">&UpArrow;</span></th>
+                                <th>Time<span class="icon-arrow">&UpArrow;</span></th>
+                                <th>Date<span class="icon-arrow">&UpArrow;</span></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% data.forEach(item=> { %>
+                                <tr>
+    
+                                    <td>
+                                        <%= item.first_name %>
+                                    </td>
+                                    <td>
+                                        <%= item.last_name %>
+                                    </td>
+                                    <td>
+                                        <%= item.contact_number %>
+                                    </td>
+                                    <td>
+                                        <%= item.feedback_message %>
+                                    </td>
+                                     <td>
+                                        <%= item.time %>
+                                    </td>
+                                    <td>
+                                        <%= item.date %>
+                                    </td>
+                                </tr>
+                                <% }); %>
+                        </tbody>
+                    </table>
+                </section>
+            </main>
+ -->
+
+
+        </div>
+    </div>
+
+
+
+
+
+
+    <script src="campus_dashboard.js"></script>
+
+</body>
+
+<footer>
+
+</footer>
+
+</html>
