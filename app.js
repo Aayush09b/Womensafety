@@ -18,7 +18,7 @@ app.set('view engine', 'ejs');
 async function main() {
     try {
         // await mongoose.connect('mongodb://127.0.0.1:27017/feedback_db');
-        await mongoose.connect(process.env.DATABASE);
+        await mongoose.connect(process.env.DATABASE , { useNewUrlParser: true, connectTimeoutMS: 30000 });
         console.log('Connected to database');
     } catch (error) {
         console.error('Error connecting to database:', error);
@@ -92,6 +92,7 @@ app.get('/', async (req, res) => {
     res.sendFile(path.join(__dirname, 'landing_page.html'));
 });
 app.get('/women_dashbord', async (req, res) => {
+        console.log("chipi0");
     res.sendFile(path.join(__dirname, 'women_dashbord.html'));
 });
 
@@ -252,7 +253,7 @@ app.post('/counselling', async function (req, res) {
 main().catch(err => console.log(err));
 
 async function main() {
-    await mongoose.connect(process.env.DATABASE1);
+    await mongoose.connect(process.env.DATABASE1 , { useNewUrlParser: true, connectTimeoutMS: 30000 });
 }
 
 const UserSchema = new mongoose.Schema({
@@ -273,8 +274,11 @@ app.post("/register",  function (req, res) {
                 password: hash,
                 Name:req.body.Name
             });
+            console.log("chipi");
             await newUser.save();
+            console.log("chipi1");
             res.redirect('/women_dashbord');
+             console.log("chipi2");
         } catch (err) {
             console.error(err);
         }
@@ -284,8 +288,8 @@ app.post("/register",  function (req, res) {
 
 app.post("/login", async function (req, res) {
     try {
-        const foundUser = await User.findOne({ Name: req.body.Name });
-
+        const foundUser = await User.findOne({ Name: req.body.Name }).timeout(30000);
+        
         if (foundUser) {
             const result =await  bcrypt.compare(req.body.password, foundUser.password);
 
