@@ -91,7 +91,7 @@ const Request = mongoose.model('Request', requestSchema);
 app.get('/', async (req, res) => {
     res.sendFile(path.join(__dirname, 'landing_page.html'));
 });
-app.get('/women_dashbord.html', async (req, res) => {
+app.get('/women_dashbord', async (req, res) => {
     res.sendFile(path.join(__dirname, 'women_dashbord.html'));
 });
 
@@ -274,7 +274,7 @@ app.post("/register",  function (req, res) {
                 Name:req.body.Name
             });
             await newUser.save();
-            res.redirect('/women_dashbord.html');
+            res.redirect('/women_dashbord');
         } catch (err) {
             console.error(err);
         }
@@ -445,7 +445,8 @@ app.post('/investigation', async function (req, res) {
 
         await newPolice.save();
         // res.redirect('http://localhost:3000/police_dashboard');
-        res.redirect('/police_dashboard');
+       
+        res.redirect('/police_dashboard')
     }
     catch (err) {
         res.send('Error submitting feedback');
