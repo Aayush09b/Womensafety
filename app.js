@@ -288,7 +288,7 @@ app.post("/register",  function (req, res) {
 
 app.post("/login", async function (req, res) {
     try {
-        const foundUser = await User.findOne({ Name: req.body.Name }).timeout(30000);
+        const foundUser = await User.findOne({ Name: req.body.Name });
         
         if (foundUser) {
             const result =await  bcrypt.compare(req.body.password, foundUser.password);
