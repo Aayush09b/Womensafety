@@ -444,7 +444,8 @@ app.post('/investigation', async function (req, res) {
         });
 
         await newPolice.save();
-        res.redirect('http://localhost:3000/police_dashboard');
+        // res.redirect('http://localhost:3000/police_dashboard');
+        res.redirect('/police_dashboard');
     }
     catch (err) {
         res.send('Error submitting feedback');
