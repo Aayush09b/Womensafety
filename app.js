@@ -91,8 +91,8 @@ const Request = mongoose.model('Request', requestSchema);
 app.get('/', async (req, res) => {
     res.sendFile(path.join(__dirname, 'landing_page.html'));
 });
-app.get('/women_dashbord', async (req, res) => {
-        console.log("chipi0");
+app.get('/women_dashbord.html', async (req, res) => {
+      
     res.sendFile(path.join(__dirname, 'women_dashbord.html'));
 });
 
@@ -274,11 +274,11 @@ app.post("/register",  function (req, res) {
                 password: hash,
                 Name:req.body.Name
             });
-            console.log("chipi");
+          
             await newUser.save();
-            console.log("chipi1");
-            res.redirect('/women_dashbord');
-             console.log("chipi2");
+    
+            res.redirect('/women_dashbord.html');
+            
         } catch (err) {
             console.error(err);
         }
