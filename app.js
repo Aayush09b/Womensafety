@@ -305,7 +305,7 @@ app.post("/login", async function (req, res) {
             res.send("error");
         }
     } catch (err) {
-        console.error("err");
+        console.error("err",err);
         res.send("error 404");
         // Handle any other errors (e.g., send an error response)
     }
