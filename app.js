@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
@@ -16,7 +17,8 @@ app.set('view engine', 'ejs');
 
 async function main() {
     try {
-        await mongoose.connect('mongodb://127.0.0.1:27017/feedback_db');
+        // await mongoose.connect('mongodb://127.0.0.1:27017/feedback_db');
+        await mongoose.connect(process.env.DATABASE);
         console.log('Connected to database');
     } catch (error) {
         console.error('Error connecting to database:', error);
@@ -250,7 +252,7 @@ app.post('/counselling', async function (req, res) {
 main().catch(err => console.log(err));
 
 async function main() {
-    await mongoose.connect('mongodb://127.0.0.1:27017/Userdb_SIH');
+    await mongoose.connect(process.env.DATABASE1);
 }
 
 const UserSchema = new mongoose.Schema({
