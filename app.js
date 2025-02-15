@@ -18,7 +18,13 @@ app.set('view engine', 'ejs');
 async function main() {
     try {
         // await mongoose.connect('mongodb://127.0.0.1:27017/feedback_db');
-        await mongoose.connect(process.env.DATABASE , { useNewUrlParser: true, connectTimeoutMS: 30000 });
+      //  await mongoose.connect(process.env.DATABASE , { useNewUrlParser: true, connectTimeoutMS: 30000 });
+        await mongoose.connect(process.env.DATABASE, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,  // Add this
+  connectTimeoutMS: 30000,   // 30 seconds
+  serverSelectionTimeoutMS: 5000,  // 5 seconds to detect MongoDB server
+});
         console.log('Connected to database');
     } catch (error) {
         console.error('Error connecting to database:', error);
@@ -253,7 +259,13 @@ app.post('/counselling', async function (req, res) {
 main().catch(err => console.log(err));
 
 async function main() {
-    await mongoose.connect(process.env.DATABASE1 , { useNewUrlParser: true, connectTimeoutMS: 30000 });
+   // await mongoose.connect(process.env.DATABASE1 , { useNewUrlParser: true, connectTimeoutMS: 30000 });
+    await mongoose.connect(process.env.DATABASE, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,  // Add this
+  connectTimeoutMS: 30000,   // 30 seconds
+  serverSelectionTimeoutMS: 5000,  // 5 seconds to detect MongoDB server
+});
 }
 
 const UserSchema = new mongoose.Schema({
